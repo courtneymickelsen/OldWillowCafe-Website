@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Old Willow Cafe</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/order.css">
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/order.js"></script>
+</head>
+<body>
+    <header>
+        <%- include('components/nav.ejs') %>
+    </header>
+    <main class="order-main">
+        <div class="menu-main-div"></div>
+        <h1>Order</h1>
+        <h2>Lorem Ipsum</h2>
+        <div class="form-div">
+            <form method="post" action="#" class="order-form">
+                <label for="date-dropdown">Pickup Date: </label>
+                <select id="date-dropdown" required></select>
+                <div class="new-flavor-div">
+                    <div class="flavor-div">
+                        <label for="flavor-dropdown">Flavor:</label>
+                        <select name="flavor-dropdown" class="flavor-dropdown" required></select>
+                        <label for="count">Count:</label>
+                        <input type="number" name="count" class="count" min="1" value="0" required></input>
+                    </div>
+                </div>
+                <button class="add-flavor-button">Add Another Flavor</button>
+                <div class="personal">
+                    <label>Name:</label>
+                    <input name="name" id="name" required>
+                    <label for="phone">Phone Number:</label>
+                    <input name="phone" id="phone" type="tel" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                    <input type="submit" id="submit" value="Place Order">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('components/footer.ejs') %>
+    </footer>
+</body>
+</html>

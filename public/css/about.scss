@@ -1,0 +1,37 @@
+.about-main {
+    margin: 20px auto;
+    max-width: 75%;
+
+    div {
+        margin: auto;
+    }
+    h3 {
+        font-size: 22px;
+    }
+}
+
+.about-img {
+    width: 100%;
+    margin: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 480px) {
+    .about-main {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-img.center {
+        grid-column: 2;
+    }
+    div.center {
+        grid-row: 2;
+    }
+    .about-img {
+        width: 100%;
+        margin: auto;
+        min-height: 100%;
+    }
+}

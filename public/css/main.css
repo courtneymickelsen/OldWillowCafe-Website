@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #193849;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #8C9CA4;
+}
+
+body {
+  font-family: 'Marcellus', Helvetica, sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #000;
+  margin: 0;
+}
+
+h2 {
+  width: 75%;
+  margin: auto;
+  padding: 20px 0px;
+  border-bottom: 1.5px solid #000;
+}
+
+.main-nav {
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto min-content;
+      grid-template-columns: auto -webkit-min-content;
+      grid-template-columns: auto min-content;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.nav-menu-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  right: 0;
+  z-index: 5;
+  background-color: #f1f3f4;
+  top: 150px;
+}
+
+.nav-menu-div.closed {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  width: 0;
+  position: fixed;
+  visibility: hidden;
+}
+
+.nav-menu-div.open {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.nav-menu-div .nav-logo {
+  position: absolute;
+}
+
+.nav-menu {
+  padding: 0;
+  justify-items: center;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  margin: auto;
+}
+
+.nav-menu li {
+  padding: 10px;
+}
+
+.close-nav-menu-full-page {
+  position: absolute;
+  height: 100%;
+  width: 98%;
+  z-index: 4;
+}
+
+.nav-logo {
+  max-height: 125px;
+  padding: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto auto 15px;
+  z-index: 1;
+}
+
+.socials-logo-div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socials-logo-div a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.socials-div {
+  height: 25px;
+}
+
+.social-icon {
+  max-height: 25px;
+}
+
+.nav-link {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.nav-menu-button {
+  display: inline-block;
+  width: 20px;
+  margin: auto;
+}
+
+.bar1, .bar2, .bar3 {
+  max-width: 20px;
+  height: 1.5px;
+  background-color: #000;
+  margin: 6px 0 0 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.x .bar1 {
+  -webkit-transform: translate(0, 7.3px) rotate(-45deg);
+          transform: translate(0, 7.3px) rotate(-45deg);
+}
+
+.x .bar2 {
+  opacity: 0;
+}
+
+.x .bar3 {
+  -webkit-transform: translate(0, -7.3px) rotate(45deg);
+          transform: translate(0, -7.3px) rotate(45deg);
+}
+
+footer {
+  background-color: #536A77;
+  color: #fff;
+  height: 50px;
+}
+
+footer p {
+  margin: auto;
+}
+
+@media only screen and (min-width: 769px) {
+  .nav-menu-div {
+    position: absolute;
+    background-color: transparent;
+    top: 55px;
+    z-index: 0;
+  }
+  .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 75%;
+    font-size: larger;
+  }
+  .nav-menu li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+            flex: 1 1 0;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .nav-menu .order0 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  .nav-menu .order1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+  }
+  .nav-menu .order2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .nav-menu-button, .close-nav-menu, .socials-div {
+    display: none;
+  }
+  .nav-logo {
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,48 @@
+@import "variables";
+
+.menu-cards-div {
+    // border-top: 1.5px solid $color4;
+    display: grid;
+    width: 75%;
+    max-width: 850px;
+    margin: auto;
+    padding: 20px 0px;
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(80px, 1fr));
+    text-align: center;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
+    margin: 2px;   
+    box-sizing: border-box;
+}
+
+.menu-card-img {
+    max-width: calc(100% - 23px);
+    position: absolute;
+    opacity: 1;
+    transition: .7s;
+    border: 1.5px solid $color4;
+    padding: 10px;
+    
+    &:hover {
+        opacity: 0;
+    }
+}
+
+.menu-card-hover-img {
+    max-width: 100%;
+    border: 1.5px solid $color4;
+    padding: 10px;
+}
+
+@media only screen and (min-width: 480px) {
+    
+    .menu-cards-div {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    }
+}
