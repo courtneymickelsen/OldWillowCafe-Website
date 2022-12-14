@@ -14,7 +14,7 @@ const initDb = (callback) => {
     useUnifiedTopology: true
   })
     .then((client) => {
-      _db = client;
+      _db = client.db('general');
       callback(null, _db);
     })
     .catch((err) => {

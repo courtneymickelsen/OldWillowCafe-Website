@@ -4,7 +4,7 @@ const mongooseObjId = require('mongoose').Types.ObjectId;
 
 const getAllCustomers = async (req, res) =>{
     try {
-        const response = await mongodb.getDb('general').collection('customers').find();
+        const response = await mongodb.getDb().collection('customers').find();
         response.toArray().then((list) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(list);
@@ -24,7 +24,6 @@ const getSingleCustomer = async (req, res) => {
         }
         const response = await mongodb
             .getDb()
-            .db('general')
             .collection('customers')
             .find({ _id: userId });
         response.toArray().then((list) => {
@@ -44,7 +43,7 @@ const createCustomer = async (req, res) => {
             email: req.body.email,
             phoneNumber: req.body.phoneNumber,
         };
-        const response = await mongodb.getDb().db('general').collection('customers').insertOne(customerObj);
+        const response = await mongodb.getDb().collection('customers').insertOne(customerObj);
 
         if (response.acknowledged) {
             res.status(201).json(response);
@@ -69,7 +68,7 @@ const editCustomer = async (req, res) => {
             email: req.body.email,
             phoneNumber: req.body.phoneNumber,
         };
-        const response = await mongodb.getDb().db('general').collection('customers').replaceOne({_id: userId}, customerObj);
+        const response = await mongodb.getDb().collection('customers').replaceOne({_id: userId}, customerObj);
 
         if (response.acknowledged) {
             res.status(204).json(response);
@@ -88,7 +87,7 @@ const deleteCustomer = async (req, res) => {
             res.status(400).send({'Invalid Id' : userId});
             return;
         }
-        const response = await mongodb.db('general').collection('customers').deleteOne({_id: userId});
+        const response = await mongodb.getDb().collection('customers').deleteOne({_id: userId});
         if (response.deletedCount > 0){
             res.status(200).send();
         } else {
