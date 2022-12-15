@@ -4,7 +4,7 @@ const mongooseObjId = require('mongoose').Types.ObjectId;
 
 const getAllOrders = async (req, res) =>{
     try {
-        const response = await mongodb.getDb().db('general').collection('orders').find();
+        const response = await mongodb.getDb().collection('orders').find();
         response.toArray().then((list) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(list);
@@ -21,7 +21,7 @@ const getSingleOrder = async (req, res) => {
             res.status(400).send({'Invalid Id' : orderId});
             return;
         }
-        const response = await mongodb.getDb().db('general').collection('orders').find({ _id: orderId });
+        const response = await mongodb.getDb().collection('orders').find({ _id: orderId });
         response.toArray().then((list) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(list);
@@ -34,16 +34,17 @@ const getSingleOrder = async (req, res) => {
 const createOrder = async (req, res) => {
     const orderObj = {
         customerId: req.body.customerId,
-        dessertType: req.body.dessertType,
-        flavor: req.body.flavor,
-        count: req.body.count,
-        message: req.body.message,
-        deliveryDate: req.body.deliveryDate,
-        deliveryAddress: req.body.deliveryAddress,
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        date: req.body.date,
+        flavors: req.body.flavor,
+        counts: req.body.count,
     };
-    const response = await mongodb.getDb().db('general').collection('orders').insertOne(orderObj);
+    const response = await mongodb.getDb().collection('orders').insertOne(orderObj);
     if (response.acknowledged) {
-        res.status(201).json(response);
+        res.redirect('/order-complete');
+        // res.status(201).json(response);
     } else {
         res.status(500).json(response.error || 'Something went wrong. Please try again.');
     }
@@ -62,7 +63,7 @@ const editOrder = async (req, res) => {
             count: req.body.count,
             deliveryDate: req.body.deliveryDate,
         };
-        const response = await mongodb.getDb().db('general').collection('orders').replaceOne({_id: orderId}, orderObj);
+        const response = await mongodb.getDb().collection('orders').replaceOne({_id: orderId}, orderObj);
 
         if (response.acknowledged) {
             res.status(204).json(response);
@@ -82,7 +83,7 @@ const deleteOrder = async (req, res) => {
             res.status(400).send({'Invalid Id' : orderId});
             return;
         }
-        const response = await mongodb.getDb().db('general').collection('orders').deleteOne({_id: orderId});
+        const response = await mongodb.getDb().collection('orders').deleteOne({_id: orderId});
         if (response.deletedCount > 0){
             res.status(200).send();
         } else {

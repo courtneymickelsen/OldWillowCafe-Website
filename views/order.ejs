@@ -19,13 +19,13 @@
         <h1>Order</h1>
         <h2>Lorem Ipsum</h2>
         <div class="form-div">
-            <form method="post" action="#" class="order-form">
-                <label for="date-dropdown">Pickup Date: </label>
-                <select id="date-dropdown" required></select>
+            <form method="post" action="/orders" class="order-form">
+                <label for="date">Pickup Date: </label>
+                <select name="date" id="date" required></select>
                 <div class="new-flavor-div">
                     <div class="flavor-div">
-                        <label for="flavor-dropdown">Flavor:</label>
-                        <select name="flavor-dropdown" class="flavor-dropdown" required></select>
+                        <label for="flavor">Flavor:</label>
+                        <select name="flavor" class="flavor-dropdown" required></select>
                         <label for="count">Count:</label>
                         <input type="number" name="count" class="count" min="1" value="0" required></input>
                     </div>

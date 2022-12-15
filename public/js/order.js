@@ -1,4 +1,4 @@
-let dateDropdown = document.querySelector('#date-dropdown');
+let dateDropdown = document.querySelector('#date');
 let addFlavorButton = document.querySelector('.add-flavor-button');
 let submitButton = document.querySelector('#submit');
 let newFlavorDiv = document.querySelector('.new-flavor-div');
@@ -91,7 +91,7 @@ function getFormData() {
         countValues.push(value);
     });
     
-    let dateValue = document.querySelector('#date-dropdown').value;
+    let dateValue = document.querySelector('#date').value;
     let nameValue = document.querySelector('#name').value;
     let phoneValue = document.querySelector('#phone').value;
     let emailValue = document.querySelector('#email').value;
@@ -106,6 +106,7 @@ function getFormData() {
     }
     
     console.log(formData);
+    return formData;
 }
 
 function addNewFlavor(e){
@@ -121,8 +122,8 @@ function addNewFlavor(e){
     let newFlavorHtml = `
     <div class="flavor-div new">
     <hr>
-    <label for="flavor-dropdown">Flavor:</label>
-    <select name="flavor-dropdown" class="flavor-dropdown" required></select>
+    <label for="flavor">Flavor:</label>
+    <select name="flavor" class="flavor-dropdown" required></select>
     <label for="count">Count:</label>
     <input type="number" name="count" class="count" min="1" value="0" required></input>
     </div>`;

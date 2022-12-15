@@ -5,7 +5,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
 routes.get('/', getAllOrders);
 routes.get('/:id', getSingleOrder);
-routes.post('/', orderValidation, handleValidationErrors, createOrder);
+routes.post('/', createOrder);
 routes.put('/:id', orderValidation, handleValidationErrors, editOrder);
 routes.delete('/:id', deleteOrder);
 

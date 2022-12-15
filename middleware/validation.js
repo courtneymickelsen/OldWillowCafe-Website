@@ -10,8 +10,8 @@ const customerValidation = [
 ];
 
 const orderValidation = [
-  check("count", "Count must be a valid whole number to continue.").isInt(),
-  check("count", "You must buy at least 1 item to place an order.").custom((value, {}) => value > 0)
+  // check("count".toInt(), "Count must be a valid whole number to continue.").isInt(),
+  // check("count", "You must buy at least 1 item to place an order.").custom((value, {}) => value > 0)
 ];
 
 const handleValidationErrors = (req, res, next) => {
