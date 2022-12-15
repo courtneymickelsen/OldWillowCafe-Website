@@ -1,6 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const mongooseObjId = require('mongoose').Types.ObjectId;
+const {sendMessage} = require('./notify');
 
 const getAllOrders = async (req, res) =>{
     try {
@@ -43,8 +44,8 @@ const createOrder = async (req, res) => {
     };
     const response = await mongodb.getDb().collection('orders').insertOne(orderObj);
     if (response.acknowledged) {
+        sendMessage(orderObj);
         res.redirect('/order-complete');
-        // res.status(201).json(response);
     } else {
         res.status(500).json(response.error || 'Something went wrong. Please try again.');
     }
