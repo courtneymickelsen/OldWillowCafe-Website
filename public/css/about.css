@@ -23,7 +23,7 @@
   .about-main {
     display: -ms-grid;
     display: grid;
-    gap: 10px;
+    gap: 20px;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
