@@ -39,6 +39,10 @@
       align-self: center;
 }
 
+.menu-card h3 {
+  font-size: 16px;
+}
+
 .menu-card-img {
   max-width: calc(100% - 2vw);
   position: absolute;
@@ -61,8 +65,8 @@
 
 @media only screen and (min-width: 480px) {
   .menu-cards-div {
-    -ms-grid-columns: (minmax(175px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    -ms-grid-columns: (minmax(170px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   }
 }
 /*# sourceMappingURL=menu.css.map */
