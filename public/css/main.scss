@@ -114,6 +114,7 @@ h2 {
 
 .nav-logo {
     max-height: $logo-height;
+    max-width: $logo-height;
     padding: 5px;
     width: fit-content;
     margin: auto auto 15px;
@@ -173,40 +174,47 @@ h2 {
 
 // footer 
 footer {
-    // position: absolute;
-    // bottom: 0;
     background-color: $color4;
     margin-top: 30px;
     width: 100%;
 }
 
 .footer-div {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     color: $color1;
     height: fit-content;
     padding: 20px 10px;
-    text-align: left;
-
+    text-align: center;
+    
     div {
         margin: auto;
     }
-
+    
     p {
+        padding: 0;
+        margin: auto;
         word-wrap: break-word;
     }
 
     .footer-logo {
         background-color: $color1;
-        // border-radius: 100%;
         padding: 10px;
         margin: 10px;
         max-height: $footer-height;
     }
 }
 
-@media only screen and (min-width: 480px) {   
+@media only screen and (min-width: 480px) { 
+    .footer-div {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: left;
+        div {
+            max-height: fit-content;
+        }
+    }  
 }
 
 @media only screen and (min-width: 769px) {

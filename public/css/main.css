@@ -112,6 +112,7 @@ h2 {
 
 .nav-logo {
   max-height: 125px;
+  max-width: 125px;
   padding: 5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -192,17 +193,20 @@ footer {
 }
 
 .footer-div {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 10px;
   color: #fff;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 20px 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .footer-div div {
@@ -210,6 +214,8 @@ footer {
 }
 
 .footer-div p {
+  padding: 0;
+  margin: auto;
   word-wrap: break-word;
 }
 
@@ -218,6 +224,21 @@ footer {
   padding: 10px;
   margin: 10px;
   max-height: 100px;
+}
+
+@media only screen and (min-width: 480px) {
+  .footer-div {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    text-align: left;
+  }
+  .footer-div div {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
 }
 
 @media only screen and (min-width: 769px) {

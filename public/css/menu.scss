@@ -1,7 +1,6 @@
 @import "variables";
 
 .menu-cards-div {
-    // border-top: 1.5px solid $color4;
     display: grid;
     width: 75%;
     max-width: 850px;
@@ -19,15 +18,20 @@
     position: relative;
     margin: 2px;   
     box-sizing: border-box;
+    max-height: min-content;
+    align-items: flex-start;
+    
+    p, h3 {
+        align-self: center;
+    }
 }
 
 .menu-card-img {
-    max-width: calc(100% - 23px);
+    max-width: calc(100% - 2vw);
     position: absolute;
-    opacity: 1;
     transition: .7s;
     border: 1.5px solid $color4;
-    padding: 10px;
+    padding: 1vw;
     
     &:hover {
         opacity: 0;
@@ -35,9 +39,10 @@
 }
 
 .menu-card-hover-img {
-    max-width: 100%;
+    max-width: calc(100% - 2vw);
     border: 1.5px solid $color4;
-    padding: 10px;
+    padding: 1vw;
+    display: block;
 }
 
 @media only screen and (min-width: 480px) {

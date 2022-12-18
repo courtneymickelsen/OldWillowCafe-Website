@@ -25,16 +25,27 @@
   margin: 2px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.menu-card p, .menu-card h3 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .menu-card-img {
-  max-width: calc(100% - 23px);
+  max-width: calc(100% - 2vw);
   position: absolute;
-  opacity: 1;
   -webkit-transition: .7s;
   transition: .7s;
   border: 1.5px solid #536A77;
-  padding: 10px;
+  padding: 1vw;
 }
 
 .menu-card-img:hover {
@@ -42,9 +53,10 @@
 }
 
 .menu-card-hover-img {
-  max-width: 100%;
+  max-width: calc(100% - 2vw);
   border: 1.5px solid #536A77;
-  padding: 10px;
+  padding: 1vw;
+  display: block;
 }
 
 @media only screen and (min-width: 480px) {
