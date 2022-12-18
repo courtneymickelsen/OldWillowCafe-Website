@@ -41,7 +41,7 @@ let databaseList = [
         "price": 2.50,
         "info": "Chocolate ganache dipped in lush dark chocolate.",
         "topPath": "../imgs/mango1.jpg",
-        "sidePath": "../imgs/mango2.jpg"
+        "sidePath": "../imgs/mangostrawberry4.jpg"
     },
     {
         "title": "Cotton Candy",
