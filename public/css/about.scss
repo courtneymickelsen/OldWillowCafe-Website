@@ -2,20 +2,22 @@
 
 .about-main {
     margin: 20px auto;
-    max-width: 75%;
+    width: 75%;
+    max-width: 850px;
 
     div {
         margin: auto;
     }
+    
     h3 {
         font-size: 22px;
     }
 }
 
 .about-img {
-    width: 100%;
+    max-width: calc(100% - 2vw - 3px);
     margin: auto;
-    max-height: 200px;
+    max-height: calc(100% - 4vw);
     object-fit: cover;
     border: 1.5px solid $color4;
     padding: 1vw;
@@ -24,7 +26,7 @@
 @media only screen and (min-width: 480px) {
     .about-main {
         display: grid;
-        gap: 20px;
+        gap: calc(20px + 2vw) 20px;
         grid-template-columns: 1fr 1fr;
     }
     .about-img.center {
@@ -34,7 +36,6 @@
         grid-row: 2;
     }
     .about-img {
-        width: 100%;
         margin: auto;
         min-height: 100%;
     }

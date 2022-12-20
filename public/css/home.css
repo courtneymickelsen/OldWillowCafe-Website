@@ -20,8 +20,8 @@
   display: flex;
   height: 10%;
   background-color: #f1f3f4;
-  background-position: center;
-  background-image: url("../imgs/group.jpg");
+  background-image: url("../imgs/group1.jpg");
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-align: center;
@@ -37,6 +37,7 @@
 
 @media only screen and (min-width: 769px) {
   .hero-div {
+    background-image: url("../imgs/group2.jpg");
     background-position: center;
     height: 300px;
   }

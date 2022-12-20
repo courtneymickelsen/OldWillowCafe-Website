@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 .about-main {
   margin: 20px auto;
-  max-width: 75%;
+  width: 75%;
+  max-width: 850px;
 }
 
 .about-main div {
@@ -13,9 +14,9 @@
 }
 
 .about-img {
-  width: 100%;
+  max-width: calc(100% - 2vw - 3px);
   margin: auto;
-  max-height: 200px;
+  max-height: calc(100% - 4vw);
   -o-object-fit: cover;
      object-fit: cover;
   border: 1.5px solid #536A77;
@@ -26,7 +27,7 @@
   .about-main {
     display: -ms-grid;
     display: grid;
-    gap: 20px;
+    gap: calc(20px + 2vw) 20px;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
@@ -39,7 +40,6 @@
     grid-row: 2;
   }
   .about-img {
-    width: 100%;
     margin: auto;
     min-height: 100%;
   }

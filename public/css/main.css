@@ -181,14 +181,9 @@ h2 {
           transform: translate(0, -7.3px) rotate(45deg);
 }
 
-.thank-you footer {
-  position: fixed;
-  bottom: 0;
-}
-
 footer {
   background-color: #536A77;
-  margin-top: 30px;
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -238,6 +233,10 @@ footer {
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
+  }
+  .thank-you footer {
+    position: absolute;
+    bottom: 0;
   }
 }
 

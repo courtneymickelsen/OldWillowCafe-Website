@@ -166,16 +166,10 @@ h2 {
     }
 }
 
-// thank you page
-.thank-you footer {
-    position: fixed;
-    bottom: 0;
-}
-
 // footer 
 footer {
     background-color: $color4;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -214,7 +208,12 @@ footer {
         div {
             max-height: fit-content;
         }
-    }  
+    } 
+
+    .thank-you footer {
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 @media only screen and (min-width: 769px) {
