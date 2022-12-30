@@ -15,6 +15,7 @@ const viewMenu = (req, res) => {
 const viewOrder = (req, res) => {
     res.render('order.ejs');
 };
+
 const viewThankYou = (req, res) => {
     res.render('thank-you.ejs');
 };
